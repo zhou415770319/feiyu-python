@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}欢迎光临{% endblock %} - 飞羽学习</title>
+</head>
+<body>
+{% include 'navi.html' %}
+
+{% block content %}
+<div>content内容</div>
+{% endblock %}
+
+{% include 'bootom.html' %}
+</body>
+</html>
