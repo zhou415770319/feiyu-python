@@ -39,5 +39,5 @@ urlpatterns = [
     url(r'^admin/', polls_admin.admin_site.urls),
 
     #爬虫
-    url(r'^spider/',spider_views.index,name="spider"),
+    url(r'^api/',include('spiderManager.urls')),
 ]
