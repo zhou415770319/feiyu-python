@@ -3,7 +3,7 @@ import json
 import re
 
 from bs4 import BeautifulSoup
-
+from .zhys import home
 
 def getZHYSNavis(html):
     soup = BeautifulSoup(html, 'html.parser')
@@ -78,3 +78,19 @@ def getZHYSItems(html):
     # print zhysItems
 
     return json.dumps(zhysItems)
+
+
+def getZHYSHomeInfo(html):
+    # / html / body / div[3] / div[1] / div[1]
+    soup = BeautifulSoup(html, 'html.parser')
+
+    centerList = home.getCenterList(soup)
+
+    shipuList = home.getShipuList(soup)
+
+    latestList = home.getLatestList(soup)
+
+    # print(shipuList)
+    temDict = {'centerList':centerList,'shipuList':shipuList,'latestList':latestList}
+    return json.dumps(temDict)
+

@@ -23,3 +23,15 @@ def spiderCocochinaHome(request):
     homeD = manager.spiderCocoaChinaHomeData()
 
     return HttpResponse(homeD)
+
+
+def spiderZhysItems(request):
+
+    navis = manager.spiderZHYSContentItem('http://www.cnys.com/ertong/77714.html')
+
+    return HttpResponse(navis)
+
+
+def spiderZhysHome(request):
+
+    return HttpResponse(manager.spiderZHYSHomeInfo('http://www.cnys.com/'))

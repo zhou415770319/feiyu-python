@@ -56,3 +56,8 @@ def spiderZHYSContentItem(url):
 # spiderCocoaChinaScrollImage()
 
 # print navis
+
+
+def spiderZHYSHomeInfo(url):
+
+    return ZHYSSpider.getZHYSHomeInfo(tool.getHtml(url))
