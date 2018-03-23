@@ -2,13 +2,10 @@
 from __future__ import unicode_literals
 
 from django.contrib import admin
-
+from feiyu.admin import admin_site
 # Register your models here.
 from .models import Question,Choice
 
-class MyAdminSite(admin.AdminSite):
-    site_header = u'飞羽的管理后台'
-admin_site = MyAdminSite()
 
 class ChoiceInline(admin.TabularInline):
     model = Choice

@@ -42,10 +42,10 @@ INSTALLED_APPS = [
 
     'demo',
     'polls',
+    'spiderManager',
 
     # 'blog',
     # 'jianli',
-    # 'spiderManager',
 ]
 
 MIDDLEWARE = [

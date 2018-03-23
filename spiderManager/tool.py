@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 import urllib
-from urllib import parse
+# from urllib import parse
 from urllib import request
 
 def getHtml(url):
@@ -12,7 +12,7 @@ def getHtml(url):
                 }
     # header = {'User-Agent': url_agent,'Referer': referer}
     # info 需要被编码成urllib 能理解的格式
-    data = parse.urlencode(postdata)
+    # data = parse.urlencode(postdata)
     req = request.Request(url)
     req.add_header('User-Agent', url_agent)
     # req.add_header('Referer', referer)
