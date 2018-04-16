@@ -1,16 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+
+    <!-- {#bootstrap#} -->
+<!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+<!--<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">-->
+<!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
+<!--<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">-->
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<!--<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>-->
+
+    <link href="../static/css/bootstrap.css" rel="stylesheet">
+    <link href="../static/css/bootstrap-theme.css" rel="stylesheet">
+    <link href="../static/js/jquery.js">
+    <link href="../static/js/bootstrap.js">
+    <link href="../static/js/vue.js">
+
     <title>{% block title %}欢迎光临{% endblock %} - 飞羽学习</title>
 </head>
 <body>
-{% include 'navi.html' %}
+<nav class="navbar navbar-inverse">
+    <ul class="navbar-header">
+        <a class="navbar-brand" href="#">First</a>
+        <a class="navbar-brand" href="#">First</a>
+        <a class="navbar-brand" href="#">First</a>
+        <a class="navbar-brand" href="#">First</a>
 
-{% block content %}
-<div>content内容</div>
-{% endblock %}
+    </ul>
+</nav>
 
-{% include 'bootom.html' %}
+<div class="container container-fluid jumbotron">
+    <div class="col-sm-4 col-sm-offset-4">
+        <div id="app" class="form-group">
+            <p class="form-control" v-Text="'aaa"></p>
+            <span>Input here:</span>
+            <input class="form-control" v-model="aaa">
+        </div>
+    </div>
+</div>
+<div class="btn-group">
+  <button class="btn" contenteditable="true">Action</button>
+  <button data-toggle="dropdown" class="btn dropdown-toggle"><span class="caret"></span></button>
+  <ul class="dropdown-menu" contenteditable="true">
+    <li><a href="#">操作</a></li>
+    <li><a href="#">设置栏目</a></li>
+    <li><a href="#">更多设置</a></li>
+    <li class="divider"></li>
+    <li class="dropdown-submenu"> <a tabindex="-1" href="#">更多选项</a>
+      <ul class="dropdown-menu">
+        <li><a href="#">操作</a></li>
+        <li><a href="#">设置栏目</a></li>
+        <li><a href="#">更多设置</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+<div class="col-sm-4">
+    <div class="ibox float-e-margins">
+        <div class="ibox-title">
+            <h5>默认</h5>
+            <div class="ibox-tools">
+                <a class="collapse-link">
+                    <i class="fa fa-chevron-up"></i>
+                </a>
+                <a class="dropdown-toggle" data-toggle="dropdown" href="buttons.html#" aria-expanded="false">
+                    <i class="fa fa-wrench"></i>
+                </a>
+                <ul class="dropdown-menu dropdown-user">
+                    <li>
+                        <a href="buttons.html#">选项1</a>
+                    </li>
+                    <li>
+                        <a href="buttons.html#">选项2</a>
+                    </li>
+                </ul>
+                <a class="close-link">
+                    <i class="fa fa-times"></i>
+                </a>
+            </div>
+        </div>
+        <div class="ibox-content">
+            <div id="treeview1" class="test treeview"><ul class="list-group"><li class="list-group-item node-treeview1" data-nodeid="0" style=""><span class="icon"><i class="click-collapse glyphicon glyphicon-minus"></i></span><span class="icon"><i class="glyphicon glyphicon-stop"></i></span>父节点 1</li><li class="list-group-item node-treeview1" data-nodeid="1" style=""><span class="indent"></span><span class="icon"><i class="click-expand glyphicon glyphicon-plus"></i></span><span class="icon"><i class="glyphicon glyphicon-stop"></i></span>子节点 1</li><li class="list-group-item node-treeview1" data-nodeid="2" style=""><span class="indent"></span><span class="icon"><i class="glyphicon"></i></span><span class="icon"><i class="glyphicon glyphicon-stop"></i></span>子节点 2</li><li class="list-group-item node-treeview1" data-nodeid="3" style=""><span class="icon"><i class="glyphicon"></i></span><span class="icon"><i class="glyphicon glyphicon-stop"></i></span>父节点 2</li><li class="list-group-item node-treeview1" data-nodeid="4" style=""><span class="icon"><i class="glyphicon"></i></span><span class="icon"><i class="glyphicon glyphicon-stop"></i></span>父节点 3</li><li class="list-group-item node-treeview1" data-nodeid="5" style=""><span class="icon"><i class="glyphicon"></i></span><span class="icon"><i class="glyphicon glyphicon-stop"></i></span>父节点 4</li><li class="list-group-item node-treeview1" data-nodeid="6" style=""><span class="icon"><i class="glyphicon"></i></span><span class="icon"><i class="glyphicon glyphicon-stop"></i></span>父节点 5</li></ul></div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    var vm = new Vue({
+        el:'#app',
+        data:{
+            aaa:'',
+        }
+    })
+</script>
+
+<!-- {#{% include 'navi.html' %}#}
+{##}
+{#{% block content %}#}
+{#<div>content内容</div>#}
+{#{% endblock %}#}
+{##}
+{#{% include 'bootom.html' %}#} -->
 </body>
 </html>

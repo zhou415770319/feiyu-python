@@ -22,22 +22,34 @@ from spiderManager import views as spider_views
 from demo import views as demo_views
 from polls import admin as polls_admin
 from polls import views as polls_views
+from login import views as login_views
+
 urlpatterns = [
     #例子
 
     url(r'^$', demo_views.index, name="home"),
 
-    url(r'^add/', demo_views.add, name= "add"),
-    url(r'^add2/(\d+)/(\d+)/', demo_views.add2, name= "add2"),
+    # url(r'^add/', demo_views.add, name= "add"),
+    # url(r'^add2/(\d+)/(\d+)/', demo_views.add2, name= "add2"),
 
     # polls
     url(r'^polls/', include('polls.urls')),
 
     #博客
-    url(r'^blog/', blog_views.index),
+    url(r'^blog/getbloglist', blog_views.getbloglist),
 
     url(r'^admin/', polls_admin.admin_site.urls),
 
     #爬虫
     url(r'^api/',include('spiderManager.urls')),
+
+    # 登录注册
+    url(r'^index/', login_views.index, name="index"),
+
+    url(r'^login/', login_views.login, name="login"),
+
+    url(r'^register/', login_views.register, name="register"),
+
+    url(r'^logout/', login_views.logout, name="logout"),
+
 ]

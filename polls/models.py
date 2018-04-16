@@ -10,6 +10,7 @@ from django.utils import timezone
 class Question(models.Model):
     question_text = models.CharField('问题',max_length=200)
     pub_date = models.DateTimeField('创建时间')
+    models.DateTimeField()
     # update_time = models.DateTimeField('更新时间')
 
     def was_published_recently(self):
