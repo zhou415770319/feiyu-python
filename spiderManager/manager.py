@@ -61,3 +61,13 @@ def spiderZHYSContentItem(url):
 def spiderZHYSHomeInfo(url):
 
     return ZHYSSpider.getZHYSHomeInfo(tool.getHtml(url))
+
+
+def addCode(result,isSuccusess):
+    if isSuccusess:
+        result['code'] = 200
+        result['codemsg'] = "请求成功！"
+    else:
+        result['code'] = 444
+        result['codemsg'] = "请求失败！"
+    return result

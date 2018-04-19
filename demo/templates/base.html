@@ -1,3 +1,5 @@
+{% load staticfiles %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,11 +12,10 @@
 <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
 <!--<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>-->
 
-    <link href="../static/css/bootstrap.css" rel="stylesheet">
-    <link href="../static/css/bootstrap-theme.css" rel="stylesheet">
-    <link href="../static/js/jquery.js">
-    <link href="../static/js/bootstrap.js">
-    <link href="../static/js/vue.js">
+<!-- Bootstrap -->
+    <link href="{% static 'bootstrap-3.3.7-dist/css/bootstrap.css' %}" rel="stylesheet">
+    <link href="{% static 'bootstrap-3.3.7-dist/css/bootstrap-theme.css' %}" rel="stylesheet">
+
 
     <title>{% block title %}欢迎光临{% endblock %} - 飞羽学习</title>
 </head>
@@ -85,6 +86,11 @@
         </div>
     </div>
 </div>
+
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'bootstrap-3.3.7-dist/js/bootstrap.js' %}"></script>
+{#    <script src="{% static 'js/vue.js' %}"></script>#}
+
 <script type="text/javascript">
     var vm = new Vue({
         el:'#app',

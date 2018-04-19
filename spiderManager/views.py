@@ -22,7 +22,11 @@ def spiderNavi(request):
 def spiderCocochinaHome(request):
     homeD = manager.spiderCocoaChinaHomeData()
 
-    return HttpResponse(homeD)
+    response = HttpResponse(homeD)
+    response['Access-Control-Allow-Origin'] = '*'  # 允许的跨域名
+    response['Access-Control-Allow-Headers'] = 'h1'  # 允许的请求头
+    # response['Access-Control-Allow-Methods'] = 'PUT'   #允许的请求方法
+    return response
 
 
 def spiderZhysItems(request):

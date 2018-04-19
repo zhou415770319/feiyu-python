@@ -3,6 +3,7 @@
 import json
 from bs4 import BeautifulSoup
 import re
+from . import manager
 def getScrollImg(html):
 
     soup = BeautifulSoup(html, 'html.parser')
@@ -40,6 +41,9 @@ def getHomeData(html):
         title = li.a.string
         dict = {'title': title,'url': url}
         infos.append(dict)
+    if not infos:
+        result = manager.addCode(result,False)
+        return  json.dumps(result)
     result['mainNavis'] = infos
     # print infos
 
@@ -54,6 +58,11 @@ def getHomeData(html):
         dict = {'title': title,'url': url}
         infos.append(dict)
     result['subNavis'] = infos
+    if not infos:
+        result = manager.addCode(result,False)
+        return  json.dumps(result)
+    tem = {}
+    tem['data'] = result
+    tem = manager.addCode(tem,True)
 
-
-    return json.dumps(result)
+    return json.dumps(tem)

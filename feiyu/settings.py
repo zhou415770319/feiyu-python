@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'blog',
     # 'jianli',
     'login',
+    'captcha'
 ]
 
 # Auth_USER_MODEL = 'users.User'
@@ -93,7 +94,7 @@ DATABASES = {
         # 'ENGINE': 'django.db.backends.sqlite3',
         # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'feiyu',
+        'NAME': 'fei',
         'HOST': '127.0.0.1',
         'USER': 'root',
         'PASSWORD': '123456',
@@ -143,3 +144,9 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.163.com'
+EMAIL_PORT = 465
+EMAIL_HOST_USER = 'zhou415770319@163.com'
+EMAIL_HOST_PASSWORD = 'zhou9468334'

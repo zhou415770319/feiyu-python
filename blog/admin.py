@@ -6,7 +6,11 @@ from django.contrib import admin
 # Register your models here.
 from django.contrib import admin
 from .models import Article
+from .models import Category
+from .models import Tag
+
 from feiyu.admin import admin_site
 
-
 admin_site.register(Article)
+admin_site.register(Category)
+admin_site.register(Tag)

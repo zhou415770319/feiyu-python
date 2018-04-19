@@ -52,4 +52,6 @@ urlpatterns = [
 
     url(r'^logout/', login_views.logout, name="logout"),
 
+    url(r'^captcha', include('captcha.urls'))  # 增加这一行
+
 ]
