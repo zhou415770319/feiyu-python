@@ -6,7 +6,7 @@ from urllib import request
 def getHtml(url):
 
     url_agent = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36'
-    referer = 'http://www.xxxx.com/'
+    referer = 'http://www.feiyu.com/'
     postdata = {'username': 'qwe', 'password': 'qwe123'
 
                 }

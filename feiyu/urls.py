@@ -37,6 +37,7 @@ urlpatterns = [
 
     #博客
     url(r'^blog/getbloglist', blog_views.getbloglist),
+    url(r'^blog/articleDetails', blog_views.article_details),
 
     url(r'^admin/', polls_admin.admin_site.urls),
 
@@ -52,6 +53,8 @@ urlpatterns = [
 
     url(r'^logout/', login_views.logout, name="logout"),
 
-    url(r'^captcha', include('captcha.urls'))  # 增加这一行
+    # url(r'^captcha', include('captcha.urls')),  # 增加这一行
+    #
+    # url(r'^api-auth/', include('rest_framework.urls'))
 
 ]

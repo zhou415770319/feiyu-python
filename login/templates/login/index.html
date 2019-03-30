@@ -2,9 +2,71 @@
 {% extends 'login/base.html' %}
 {% block title %}主页{% endblock %}
 {% block content %}
-    {% if request.session.is_login %}
-    <h1>你好,{{ request.session.user_name }}！欢迎回来！</h1>
-    {% else %}
-    <h1>你尚未登录，只能访问公开内容！</h1>
-    {% endif %}
+    <body class="gray-bg">
+        {% if request.session.is_login %}
+            <h1>你好,{{ request.session.user_name }}！欢迎回来！</h1>
+        {% else %}
+
+            <div class="alert alert-info" role="alert">{{ articles }}</div>
+
+            {% for article in articles %}
+                <div class="item col-xs-6 col-md-4">
+                <a href="/blog/articleDetails">
+                    {{ article.title }}
+                </a>
+                <div style="word-wrap:break-word ">{{ article.content }}</div>
+                </div>
+            {% endfor %}
+
+{#            <div class="container black-bg">#}
+                <div class="item col-xs-6 col-md-4">
+
+                </div>
+                <div class="item col-xs-6 col-md-4">
+                    xxxx
+                </div>
+                <div class="item col-xs-6 col-md-4">
+                    xxxx
+                </div>
+{#            </div>#}
+            <div class="clearfix"></div>
+            <div class="wrapper wrapper-content  animated fadeInRight blog">
+                <div class="row col-md-9">
+                    <div class="col-lg-4">
+                        <div class="ibox">
+                            <div class="ibox-content">
+                        <a href="http://www.liujiangblog.com/blog/" class="btn-link">
+                            <h2>
+                                    想知道宁泽涛每天游多少圈？送他 Misfit 最新款 Speedo Shine
+                                </h2>
+                        </a>
+                        <div class="small m-b-xs">
+                            <strong>高 晨</strong> <span class="text-muted"><i class="fa fa-clock-o"></i> 3 小时前</span>
+                        </div>
+                        <p>
+                            就算你敢带着 Apple Watch 下水游泳，它也不能记录你游了多少圈。 夏天刚来时就不停地听到有人提起“有没有在我游泳的时候可以帮忙数圈的设备”，今天 Misfit 终于赶在夏天结束之前推出可追踪游泳运动的新款 Shine。这款新设备是 Misfit 与泳衣品牌 Speedo （速比涛）合作推出，因此被命名为 Speedo Shine。
+                        </p>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h5>标签：</h5>
+                                <button class="btn btn-primary btn-xs" type="button">Apple Watch</button>
+                                <button class="btn btn-white btn-xs" type="button">速比涛</button>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="small text-right">
+                                    <h5>状态：</h5>
+                                    <div> <i class="fa fa-comments-o"> </i> 56 评论 </div>
+                                    <i class="fa fa-eye"> </i> 144 浏览
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+    </body>
+
 {% endblock %}
+

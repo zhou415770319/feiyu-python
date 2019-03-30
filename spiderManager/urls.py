@@ -15,5 +15,6 @@ urlpatterns = [
     url(r'^zhys/items/', views.spiderZhysItems, name="spider_zhys_item"),
 
     url(r'^cocoachina/home', views.spiderCocochinaHome, name="spider_cocoachina_home"),
+    url(r'^cocoachina/ioslist', views.spiderCocochinaIosList, name="spider_cocoachina_ioslist"),
 
 ]
