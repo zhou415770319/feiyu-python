@@ -37,7 +37,7 @@ urlpatterns = [
 
     #博客
     url(r'^blog/getbloglist', blog_views.getbloglist),
-    url(r'^blog/articleDetails', blog_views.article_details),
+    url(r'^blog/articleDetails/article_(?P<id>[\d]+)$', blog_views.article_details),
 
     url(r'^admin/', polls_admin.admin_site.urls),
 

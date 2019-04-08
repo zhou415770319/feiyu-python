@@ -1,0 +1,34 @@
+.item{
+    padding: 10px 10px;
+    display: inline-block;
+}
+.article-link{
+    font-size: 30px;
+    color: #567db3;
+}
+.article-link:hover{
+    text-decoration: none;
+    color: #c0c730;
+}
+.article-link div{
+    font-size: 15px;
+    color: #333;
+}
+.article-link div:hover{
+    text-decoration: none;
+    color: #c0c730;
+}
+
+.read-btn{
+    padding: 8px 20px;
+    background: #c52d2f;
+    color: #fff;
+    border-radius: 4px;
+    border: none;
+    margin-top: 10px;
+    display: inline-block;
+}
+.read-btn:hover{
+    text-decoration: none;
+    color: #333;
+}

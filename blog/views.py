@@ -41,9 +41,11 @@ def getbloglist(request):
     return response
 
 
-def article_details(request):
+def article_details(request,id):
+    article = Article.objects.get(id=id)
+    print(id)
 
-    return render(request,'login/login.html')
+    return render(request,'login/articledetail.html',{'article':article})
 
 def addCode(result,isSuccusess):
     if isSuccusess:
@@ -59,7 +61,7 @@ class DateEncoder(json.JSONEncoder):
     def default(self, obj):
         if isinstance(obj, datetime.datetime):
             return obj.strftime('%Y-%m-%d %H:%M:%S')
-        elif isinstance(obj, date):
+        elif isinstance(obj, datetime.datetime):
             return obj.strftime("%Y-%m-%d")
         else:
             return json.JSONEncoder.default(self, obj)
