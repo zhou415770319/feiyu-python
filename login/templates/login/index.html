@@ -15,17 +15,25 @@
             <div class="alert alert-info" role="alert">{{ articles }}</div>
 
             {% for article in articles %}
-                <div class="item col-xs-6 col-md-4">
-                <a href="/blog/articleDetails/article_{{ article.id }}" class="article-link">
-                    {{ article.title }}
-                    <div style="word-wrap:break-word ">
-                    {{ article.des }}
-                    </div>
-                </a>
+                <div class="col-lg-6">
+                    <div class="item">
+                        <a href="/blog/articleDetails/article_{{ article.id }}" class="article-link">
+                            {{ article.title }}
+                            <div class="article-pro">
+                                <p>发表于:{{ article.create_time }}</p>
+                                <p>分类：{{ article.category.categoryName }}</p>
+                                <p>评论：{{ article.commentNum }}</p>
+                            </div>
+                            <div class="article-des" style="word-wrap:break-word ">
+                            {{ article.des }}
+                            </div>
+                        </a>
 
-                 <a class="read-btn" href="/blog/articleDetails/article_{{ article.id }}">
-                        阅读更多
-                 </a>
+                         <a class="read-btn" href="/blog/articleDetails/article_{{ article.id }}">
+                                阅读更多
+                         </a>
+                    </div>
+
                 </div>
             {% endfor %}
 

@@ -2,6 +2,7 @@
 from __future__ import unicode_literals
 
 from django.db import models
+from mdeditor.fields import MDTextField
 from login.models import User
 import datetime
 # Create your models here.
@@ -38,7 +39,9 @@ class Tag(models.Model):
 
 class Article(models.Model):
     title = models.CharField(u'标题', max_length=256)
-    content = models.TextField(u'内容',default="")
+    # content = models.TextField(u'内容',default="")
+    content = MDTextField(u'内容',default="")
+
     des = models.TextField(u'描述',default="")
 
     user = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -49,7 +52,7 @@ class Article(models.Model):
     # contentdes = models.TextField(u'内容',default="")
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     category.verbose_name = "分类"
-    tag = models.ManyToManyField(Tag)
+    tag = models.ManyToManyField(Tag,blank=True)
     tag.verbose_name = "标签"
     isPub = models.BooleanField('发布状态',default=False)
     commentNum = models.IntegerField('评论数',default=0)

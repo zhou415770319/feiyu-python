@@ -1,7 +1,28 @@
+
+.navbar{
+    background-color: white;
+}
+.account-menu{
+    display: none;
+}
+.navbar-brand:hover .account-menu{
+    display: block;
+    background-color: #0e9aef;
+}
+
 .item{
+    margin: 10px auto;
     padding: 10px 10px;
     display: inline-block;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #d9d9d9;
+    width: 100%;
 }
+.item:hover{
+    /*background-color: #0d8ddb;*/
+    box-shadow: 0 0 15px #999;
+}
+
 .article-link{
     font-size: 30px;
     color: #567db3;
@@ -14,11 +35,23 @@
     font-size: 15px;
     color: #333;
 }
-.article-link div:hover{
+.article-link .article-des:hover{
     text-decoration: none;
     color: #c0c730;
 }
 
+.article-pro{
+    display: block;
+}
+.article-pro p{
+    display: inline-block;
+}
+.article-pro:hover{
+    color: #333;
+}
+.article-pro p:hover{
+    color: #333;
+}
 .read-btn{
     padding: 8px 20px;
     background: #c52d2f;
@@ -31,4 +64,9 @@
 .read-btn:hover{
     text-decoration: none;
     color: #333;
+}
+
+.footer{
+    margin: 60px 10px 50px;
+    display: inline-block;
 }

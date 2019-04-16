@@ -1,4 +1,15 @@
-<h3>{{ article.title }}</h3>
-<div>
-    {{ article.content }}
-</div>
+{% extends 'login/base.html' %}
+{% block content %}
+    <h3>{{ article.title }}</h3>
+    作者：
+    <a>
+        {{ article.user.name }}
+    </a>
+
+    <a>
+        {{ article.create_time }}
+    </a>
+    <body>
+        {{ article.content|safe }}
+    </body>
+{% endblock %}

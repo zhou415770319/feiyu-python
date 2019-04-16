@@ -16,6 +16,9 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 from django.conf.urls import include,url
+from django.conf.urls.static import static
+from django.conf import settings
+
 from django.contrib import admin
 from blog import views as blog_views
 from spiderManager import views as spider_views
@@ -25,8 +28,14 @@ from polls import views as polls_views
 from login import views as login_views
 
 urlpatterns = [
-    #例子
 
+    #markdown编辑器
+
+    url(r'mdeditor/', include('mdeditor.urls')),
+    # markdown编辑器 上传图片
+
+    url(r'api/upload/', login_views.upload, name='api-upload-url'),
+    #例子
     url(r'^$', demo_views.index, name="home"),
 
     # url(r'^add/', demo_views.add, name= "add"),
@@ -58,3 +67,6 @@ urlpatterns = [
     # url(r'^api-auth/', include('rest_framework.urls'))
 
 ]
+if settings.DEBUG:
+    # static files (images, css, javascript, etc.)
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

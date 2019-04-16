@@ -12,6 +12,7 @@ import json
 import datetime
 
 from .models import Article
+import markdown
 # Create your views here.
 
 def getbloglist(request):
@@ -44,7 +45,11 @@ def getbloglist(request):
 def article_details(request,id):
     article = Article.objects.get(id=id)
     print(id)
-
+    article.content = markdown.markdown(article.content,extensions=[
+                                    'markdown.extensions.extra',
+                                    'markdown.extensions.codehilite',
+                                    'markdown.extensions.toc',
+    ])
     return render(request,'login/articledetail.html',{'article':article})
 
 def addCode(result,isSuccusess):
