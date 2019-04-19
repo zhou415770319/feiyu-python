@@ -1,4 +1,4 @@
-from captcha.fields import CaptchaField
+# from captcha.fields import CaptchaField
 from django import forms
 from . import models
 

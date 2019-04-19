@@ -5,7 +5,7 @@
       <paths name="feiyu">
         <serverdata>
           <mappings>
-            <mapping deploy="/admin" local="$PROJECT_DIR$/../feiyu-admin" web="/" />
+            <mapping deploy="/feiyu" local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>

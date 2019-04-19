@@ -26,7 +26,7 @@ SECRET_KEY = '6*vsqmw_s7ewdbk192(7^)w5q&#5=9ab30q@mr57+mmpe4u+o@'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -52,9 +52,6 @@ INSTALLED_APPS = [
     'captcha'
 ]
 
-
-MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
-MEDIA_URL = '/media/'
 
 REST_FRAMEWORK = {
     # Use Django's standard `django.contrib.auth` permissions,
@@ -156,10 +153,14 @@ USE_TZ = True
 STATIC_URL = '/static/'
 # STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),
+    os.path.join(BASE_DIR,'feiyu', "static"),
+    os.path.join(BASE_DIR,'login', "static"),
 ]
 
-# MEDIA_ROOT = 'media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
+MEDIA_URL = '/media/'
+
+# MEDIA_ROOT = '/uploads/'
 #
 # MEDIA_URL = 'media/'
 
