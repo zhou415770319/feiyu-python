@@ -10,6 +10,9 @@
         {{ article.create_time }}
     </a>
     <body>
-        {{ article.content|safe }}
+        <div class="container article-content">
+            {{ article.content|safe }}
+        </div>
+
     </body>
 {% endblock %}
